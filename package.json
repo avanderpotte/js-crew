@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "global": "^4.3.2",
+    "parcel": "^1.11.0",
+    "src": "^1.1.2"
+  },
+  "name": "js-crew",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "parcel index.html -p 3000"
+  },
+  "devDependencies": {
+    "sass": "^1.15.3"
+  }
+}
