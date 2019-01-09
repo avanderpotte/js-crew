@@ -1,6 +1,8 @@
+import Home from './views/Home';
+
 class App {
   constructor () {
-    console.log('Just a Bolt');
+    this.home = new Home();
   }
 }
 

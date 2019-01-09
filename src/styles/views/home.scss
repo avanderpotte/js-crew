@@ -1,0 +1,98 @@
+.home {
+  position: relative;
+  height: 100%;
+
+  &:before {
+    content: '';
+    position: absolute;
+    
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: $white;
+
+    transform: scaleY(0);
+    transform-origin: 50% 0%;
+    transition: transform 1s $Power1EaseOut 0.5s;
+  }
+
+  &.is-active {
+    &:before {
+      transform: scaleY(1);
+    }
+  }
+}
+
+.hero {
+  $p: &;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 75%;
+
+  transform: translate(-50%, -50%);
+
+  $blockWidth: 75%;
+  $blockHeight: 55%;
+
+  &__media {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: $blockWidth;
+    height: $blockHeight;
+
+    background-image: url('https://picsum.photos/800/500?image=1072');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transition: clip-path 1.3s $Power2EaseOut;
+  }
+
+  &__caption {
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+    width: $blockWidth;
+    height: $blockHeight;
+
+    z-index: -1;
+
+    background-color: $brown;
+
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    transition: clip-path 1.3s $Power2EaseOut 0.15s;
+  }
+
+  &__caption-text {
+    position: absolute;
+
+    left: 15%;
+    bottom: 20%;
+    width: 70%;
+
+    font-size: 22px;
+    line-height: 35px;
+    text-transform: capitalize;
+
+    color: $white;
+  }
+
+  &.is-active {
+    #{$p}__media {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    #{$p}__caption {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);     
+    }
+  }
+}
